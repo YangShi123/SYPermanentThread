@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="whP-gf-Uak">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UF0-P2-h0i">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="wQg-tq-qST">
             <objects>
-                <viewController id="whP-gf-Uak" customClass="SYViewController" sceneMemberID="viewController">
+                <viewController id="whP-gf-Uak" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uEw-UM-LJ8"/>
                         <viewControllerLayoutGuide type="bottom" id="Mvr-aV-6Um"/>
@@ -20,12 +19,92 @@
                     <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUy-ER-7bB">
+                                <rect key="frame" x="154" y="318" width="67" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="下一页"/>
+                                <connections>
+                                    <segue destination="DuI-Kv-MHx" kind="show" id="q2E-KU-bkt"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wUy-ER-7bB" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="ibJ-On-IVh"/>
+                            <constraint firstItem="wUy-ER-7bB" firstAttribute="centerY" secondItem="TpU-gO-2f1" secondAttribute="centerY" id="zJ7-MS-UVa"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="8bo-s4-yU0"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="433"/>
+            <point key="canvasLocation" x="1287" y="412"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="u6d-wc-zrP">
+            <objects>
+                <viewController id="DuI-Kv-MHx" customClass="SYViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1Jb-t8-l0K"/>
+                        <viewControllerLayoutGuide type="bottom" id="yYa-oT-1ki"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XrE-GW-wO8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7t-pn-MVm">
+                                <rect key="frame" x="80" y="318" width="82" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="执行任务"/>
+                                <connections>
+                                    <action selector="excute:" destination="DuI-Kv-MHx" eventType="touchUpInside" id="46g-1D-xRb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3rE-MK-Rb0">
+                                <rect key="frame" x="213" y="318" width="82" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="结束任务"/>
+                                <connections>
+                                    <action selector="stop:" destination="DuI-Kv-MHx" eventType="touchUpInside" id="b2k-wr-oVc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="h7t-pn-MVm" firstAttribute="leading" secondItem="XrE-GW-wO8" secondAttribute="leading" constant="80" id="H2E-5p-vhJ"/>
+                            <constraint firstAttribute="trailing" secondItem="3rE-MK-Rb0" secondAttribute="trailing" constant="80" id="NFY-1D-ibJ"/>
+                            <constraint firstItem="3rE-MK-Rb0" firstAttribute="centerY" secondItem="XrE-GW-wO8" secondAttribute="centerY" id="puO-is-wsV"/>
+                            <constraint firstItem="h7t-pn-MVm" firstAttribute="centerY" secondItem="XrE-GW-wO8" secondAttribute="centerY" id="q0b-8v-KWu"/>
+                            <constraint firstItem="3rE-MK-Rb0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="h7t-pn-MVm" secondAttribute="trailing" constant="8" symbolic="YES" id="zWB-Tx-2dB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="3Mt-rL-dx3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TQc-vQ-Yas" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2124" y="412"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FPY-zU-via">
+            <objects>
+                <navigationController id="UF0-P2-h0i" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KfK-SX-P2T">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="whP-gf-Uak" kind="relationship" relationship="rootViewController" id="ydu-ls-XIL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EOa-V2-myN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="403" y="412"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
